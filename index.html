@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>This is not a phishing email</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      width: 340px;
+      text-align: center;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 10px 0 18px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 70px;
+    }
+
+    button {
+      padding: 10px 22px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+      transition: all 0.2s ease;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      left: 40px;
+    }
+
+    #noBtn {
+      background: #ccc;
+      color: black;
+      right: 40px;
+    }
+
+    #result {
+      display: none;
+      font-size: 24px;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <!-- 📸 Your photo (case-sensitive) -->
+    <img src="us.JPG" alt="Us">
+
+    <h2>Will you be my Valentine date? 💘</h2>
+
+    <div class="buttons">
+      <button id="yesBtn">YES</button>
+      <button id="noBtn">NO</button>
+    </div>
+
+    <div id="result">
+      Muackssss 😘💋
+    </div>
+
+    <!-- 🦜 Parrot kiss sound -->
+    <audio id="kissAudio" src="parrot-kiss.mp3"></audio>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const result = document.getElementById("result");
+    const kissAudio = document.getElementById("kissAudio");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 80 - 40;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      kissAudio.play();
+      result.style.display = "block";
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
